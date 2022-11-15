@@ -4,3 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available URL
 
+
+
+## Captura
+
+![alt text](https://github.com/aitorqc/chat-app/public/Captura.png)

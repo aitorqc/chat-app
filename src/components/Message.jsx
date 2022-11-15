@@ -13,23 +13,25 @@ export default function Message({ message }) {
 
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-    setMsgDate(new Date(message.date.seconds*1000).toLocaleString().split(",")[1]);
+    setMsgDate(new Date(message.date.seconds * 1000).toLocaleString().split(",")[1]);
   }, [message]);
 
   return (
-    <div ref={ref} className={`message ${message.senderId === currentUser.uid && "owner"}`}>
-      <div className="messageInfo">
-        <img src={
-          message.senderId === currentUser.uid
-            ? currentUser.photoURL
-            : data.user.photoURL
-        } alt="" />
-        <span>{msgDate}</span>
+    <>
+      <div ref={ref} className={`message ${message.senderId === currentUser.uid && "owner"}`}>
+        <div className="messageInfo">
+          <img src={
+            message.senderId === currentUser.uid
+              ? currentUser.photoURL
+              : data.user.photoURL
+          } alt="" />
+          <span>{msgDate}</span>
+        </div>
+        <div className="messageContent">
+          {message.text && <p>{message.text}</p>}
+          {message.img && <img src={message.img} alt="" />}
+        </div>
       </div>
-      <div className="messageContent">
-        {message.text && <p>{message.text}</p>}
-        {message.img && <img src={message.img} alt="" />}
-      </div>
-    </div>
+    </>
   )
 }

@@ -163,6 +163,7 @@ $base-color: #5d5b8d;
 
             .logo {
                 font-weight: bold;
+                margin-right: 5px;
 
                 @include tablet {
                     display: none;
@@ -321,6 +322,18 @@ $base-color: #5d5b8d;
                 padding: 10px;
                 height: calc(100% - 160px);
                 overflow-y: scroll;
+
+                .divider{
+                    width: 90%;
+                    margin: 1rem auto;
+                    text-align: center;
+                    padding: 6px 0;
+                    background-color: #5d5b8d;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: white;
+                }
 
                 .message {
                     display: flex;
